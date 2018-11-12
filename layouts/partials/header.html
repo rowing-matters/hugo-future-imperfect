@@ -90,7 +90,25 @@
   {{ end }}
 {{ end }}
 
+        <!-- Google Analytics plus function for opt-out-cookie -->
       {{ template "_internal/google_analytics.html" . }}
+     {{- $pc := .Site.Config.Privacy.GoogleAnalytics -}}
+    {{- if not $pc.Disable -}}
+    {{ with .Site.GoogleAnalytics }}
+      <script>
+        var gaProperty = '{{ $.Site.GoogleAnalytics }}';
+        var disableStr = 'ga-disable-' + gaProperty;
+        if (document.cookie.indexOf(disableStr + '=true') > -1) {
+        window[disableStr] = true;
+        }
+        function gaOptout() {
+        document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+        window[disableStr] = true;
+        }
+      </script>
+      {{- end -}}
+      {{- end -}}
+
     </head>
     <body>
 

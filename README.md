@@ -5,3 +5,4 @@ This is a fork of the [Theme Hugo Future Imperfect](https://github.com/jpescador
 This fork made some modifications:
 * Some static content is managed by assets pipeline for minification.
 * Added optional support for [Shariff](https://github.com/heiseonline/shariff)
+* Added shortcode and script for Google-Analytics Opt-out
