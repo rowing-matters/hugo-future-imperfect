@@ -51,6 +51,10 @@ canonifyURLs = true
   socialShareStumbleupon = true
   socialSharePinterest = true
   socialShareEmail     = true
+  
+  # Shariff for alternativ social sharing:  http://ct.de/-2467514
+  hariffShare = true
+  shariffDataServices = "[&quot;twitter&quot;,&quot;facebook&quot;,&quot;mail&quot;]"
 
   # Load custom CSS or JavaScript files. The variable is an array so that you
   # can load multiple files if necessary. You can also load the standard theme

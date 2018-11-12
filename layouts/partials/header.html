@@ -67,13 +67,18 @@
             <!-- acadecmicons is static -->
             <link rel="stylesheet" href="{{ "css/academicons.min.css" | relURL }}">
         {{ end }}
-
+        
         {{ if ne ($.Scratch.Get "cssFiles") false }}
             {{ range $.Scratch.Get "cssFiles" }}
                 {{ if ne . "default" }}
                     <link rel="stylesheet" href="{{ . | relURL }}">
                 {{ end }}
             {{ end }}
+        {{ end }}
+        
+        <!-- Shariff -->
+        {{ if ( .Site.Params.shariffShare ) }}
+        <link rel="stylesheet" href="{{ "css/shariff.min.css" | relURL }}">
         {{ end }}
         <!-- RSS-Link -->
         <link rel="alternate" type="application/atom+xml" title="{{ .Site.Title }}" href="{{ .Site.RSSLink }}">

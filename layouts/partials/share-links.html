@@ -80,3 +80,9 @@
   </a>
 </li>
 {{ end }}
+
+<div class="shariff" data-theme="white" 
+  data-url="{{ .Permalink }}" data-mail-url="mailto:"
+  data-services='{{ $.Site.Params.shariffDataServices | default "[&quot;twitter&quot;,&quot;facebook&quot;,&quot;mail&quot;]" }}'
+  data-title="{{ .Site.Title }}: {{ .Title }}"></div>
+
