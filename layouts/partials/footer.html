@@ -49,7 +49,9 @@
 
     {{ if (not .Site.Params.disable_highlight) }}
     <script>hljs.initHighlightingOnLoad();</script>
-      {{ partial "footer_mathjax" . }}
     {{ end }}
+    
+    {{ partial "footer_mathjax" . }}
+    
   </body>
 </html>
