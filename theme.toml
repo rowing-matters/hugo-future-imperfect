@@ -3,19 +3,19 @@
 
 name = "Hugo Future Imperfect"
 license = "MIT"
-licenselink = "https://github.com/jpescador/hugo-future-imperfect/blob/master/LICENSE.md"
-description = "Ported theme of HTML5 UP, future imperfect, with some extra goodies"
-homepage = "https://github.com/jpescador/hugo-future-imperfect"
+licenselink = "https://github.com/rowing-matters/hugo-future-imperfect/blob/master/LICENSE.md"
+description = "Customized fork of jpescador/hugo-future-imperfect. "
+homepage = "https://github.com/rowing-matters/hugo-future-imperfect"
 tags = ["blog", "responsive", "font awesome", "highlight.js", "fancybox 3", "staticman", "netlify"]
 features = ["html5", "css3", "responsive"]
-min_version = 0.15
+min_version = 0.51
 
 [author]
-  name = "Julio Pescador"
-  homepage = "https://jpescador.com"
+  name = "Rowing Matters"
+  homepage = "https://rowing-matters.de/"
 
 # If porting an existing theme
 [original]
-  name = "Future Imperfect"
-  homepage = "http://html5up.net/future-imperfect"
-  repo = ""
+  name = "Hugo Future Imperfect"
+  homepage = "https://github.com/jpescador/hugo-future-imperfect"
+  repo = "https://github.com/jpescador/hugo-future-imperfect.git"
