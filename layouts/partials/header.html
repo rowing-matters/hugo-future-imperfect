@@ -58,10 +58,10 @@
             
             <!-- main.css and add-on.css are handled as assets -->
             {{ $main := resources.Get "css/main.css" | minify}}
-            <link rel="stylesheet" href="{{ $main.Permalink }}" >
+            <link rel="stylesheet" href="{{ $main.RelPermalink }}" >
             {{ if (fileExists "assets/css/add-on.css") }}
                 {{ $addon := resources.Get "css/add-on.css" | minify}}
-            <link rel="stylesheet" href="{{ $addon.Permalink }}" >
+            <link rel="stylesheet" href="{{ $addon.RelPermalink }}" >
             {{- end }}
           
             <!-- acadecmicons is static -->
