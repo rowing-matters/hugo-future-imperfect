@@ -8,12 +8,15 @@
 
   {{ $favVer := $.Scratch.Get "favVer" }}
 
-  <link rel="apple-touch-icon-precomposed" href='{{ "favicon/apple-touch-icon-precomposed" | relURL }}{{ $favVer }}.png'>
-  <link rel="icon" href='{{ "favicon/favicon" | relURL }}{{ $favVer }}.png'>
-  <!--[if IE]><link rel="shortcut icon" href='/favicon{{ $favVer }}.ico'><![endif]-->
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-TileImage" content='{{ "favicon/mstile" | relURL }}{{ $favVer }}.png'>
+  <!-- Code according to https://realfavicongenerator.net/ -->
+  <link rel="apple-touch-icon" sizes="180x180" href='{{ "apple-touch-icon" | relURL }}{{ $favVer }}.png'>
+  <link rel="icon" type="image/png" sizes="32x32" href='{{ "favicon-32x32" | relURL }}{{ $favVer }}.png'>
+  <link rel="icon" type="image/png" sizes="16x16" href='{{ "favicon-16x16" | relURL }}{{ $favVer }}.png'>
+  <link rel="manifest" href='{{ "site.webmanifest" | relURL }}'>
+  <link rel="mask-icon" href='{{ "safari-pinned-tab.svg" | relURL }}' color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="msapplication-TileColor" content="#aaaaaa">
+  <meta name="msapplication-TileImage" content='{{ "mstile-150x150" | relURL }}{{ $favVer }}.png'>
   <meta name="application-name" content="{{ .Site.Title }}">
   <meta name="msapplication-tooltip" content="{{ .Site.Params.Description }}">
-  <meta name="msapplication-config" content='{{ "favicon/ieconfig.xml" | relURL }}'>
 {{ end }}

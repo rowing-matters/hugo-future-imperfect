@@ -34,10 +34,8 @@ canonifyURLs = true
   showSidebarCategories = true
   # Sets Estimated Reading Time to appear in post headers
   includeReadingTime   = true
-  # Sets the Favicon and Version for the site. Default support is for
-  # apple-touch-icon-precomposed.png, favicon.png, favicon.ico, and mstile.png.
-  # These are stored in the favicon folder. See the following for more information:
-  # https://github.com/audreyr/favicon-cheat-sheet
+  # Sets the Favicon and Version for the site. 
+  # See https://realfavicongenerator.net
   loadFavicon          = false
   faviconVersion       = ""
   # Sets Social Share links to appear on posts
@@ -53,7 +51,7 @@ canonifyURLs = true
   socialShareEmail     = true
   
   # Shariff for alternativ social sharing:  http://ct.de/-2467514
-  hariffShare = true
+  shariffShare = true
   shariffDataServices = "[&quot;twitter&quot;,&quot;facebook&quot;,&quot;mail&quot;]"
 
   # Load custom CSS or JavaScript files. The variable is an array so that you
