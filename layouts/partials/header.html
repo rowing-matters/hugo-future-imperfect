@@ -83,7 +83,7 @@
         <!-- RSS-Link -->
         <link rel="alternate" type="application/atom+xml" title="{{ .Site.Title }}" href="{{ .Site.RSSLink }}">
 
-{{ if (not .Params.disable_highlight) }}
+{{ if (not .Site.Params.disable_highlight) }}
   {{ $highTheme := .Site.Params.highlightjsTheme }}
     {{ with .Site.Params.highlightjsVersion }}
         <link href='{{ $.Site.Params.highlightjsCDN | default "//cdn.bootcss.com" }}/highlight.js/{{ . }}/styles/{{ $highTheme }}.min.css' rel='stylesheet' type='text/css' />

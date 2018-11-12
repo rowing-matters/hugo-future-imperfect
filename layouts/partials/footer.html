@@ -8,7 +8,7 @@
       {{ $.Scratch.Set "jsFiles" false }}
     {{ end }}
 
-    {{ if (not .Params.disable_highlight) }}
+    {{ if (not .Site.Params.disable_highlight) }}
       {{ $highVer := .Site.Params.highlightjsVersion }}
       {{ $highCDN := (.Site.Params.highlightjsCDN | default "//cdn.bootcss.com") }}
       {{ if (not (eq $highVer "")) }}
@@ -47,8 +47,9 @@
     <script src="{{ "js/shariff.min.js" | relURL }}"></script>
     {{ end }}
 
-    <!-- This is called by default since this theme uses highlight.js -->
+    {{ if (not .Site.Params.disable_highlight) }}
     <script>hljs.initHighlightingOnLoad();</script>
       {{ partial "footer_mathjax" . }}
+    {{ end }}
   </body>
 </html>
