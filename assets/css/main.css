@@ -12,6 +12,7 @@
 
 /* Reset */
 
+
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 	blockquote, pre, a, abbr,	acronym, address, big, cite, code, del, dfn, em,
 	img, ins, kbd, q, s, samp, small, strike, strong,	sub, sup, tt, var, b, u,
@@ -512,9 +513,9 @@
 			form.contact:before {
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome;
+				font-family: Font Awesome\ 5 Free;
 				font-style: normal;
-				font-weight: normal;
+				font-weight: 900;
 				text-transform: none !important;
 				color: #aaaaaa;
 				content: '\f002';
@@ -600,7 +601,7 @@
 		.select-wrapper:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
+			font-family: Font Awesome\ 5 Free;
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
@@ -660,7 +661,7 @@
 			input[type="radio"] + label:before {
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome;
+				font-family: Font Awesome\ 5 Free;
 				font-style: normal;
 				font-weight: normal;
 				text-transform: none !important;
@@ -728,7 +729,7 @@
 		.icon:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
+			font-family: Font Awesome\ 5 Free;
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
@@ -892,9 +893,9 @@
 					ul.icons li > *:before {
 						-moz-osx-font-smoothing: grayscale;
 						-webkit-font-smoothing: antialiased;
-						font-family: FontAwesome;
+						font-family: Font Awesome\ 5 Free;
 						font-style: normal;
-						font-weight: normal;
+						font-weight: 900;
 						text-transform: none !important;
 					}
 
@@ -935,9 +936,9 @@
 					content: "";
 					-moz-osx-font-smoothing: grayscale;
 					-webkit-font-smoothing: antialiased;
-					font-family: FontAwesome;
+					font-family: Font Awesome\ 5 Free;
 					font-style: normal;
-					font-weight: normal;
+					font-weight: 900;
 					text-transform: none !important;
 				}
 
@@ -953,9 +954,9 @@
 					content: "";
 					-moz-osx-font-smoothing: grayscale;
 					-webkit-font-smoothing: antialiased;
-					font-family: FontAwesome;
+					font-family: Font Awesome\ 5 Free;
 					font-style: normal;
-					font-weight: normal;
+					font-weight: 900;
 					text-transform: none !important;
 				}
 
@@ -2054,7 +2055,7 @@
 							table > tbody > tr > td:first-child:after {
 								float: right;
 								content: "\f107";
-								font-family: FontAwesome;
+								font-family: Font Awesome\ 5 Free;
 								font-style: normal;
 								font-weight: normal;
 								text-decoration: inherit;
@@ -2174,6 +2175,7 @@
       .post-comment-content > ul {
         margin-bottom: 1.5em;
       }
+      
 
 /* Header */
 
@@ -2344,9 +2346,9 @@
 						#header .main ul li > a:before {
 							-moz-osx-font-smoothing: grayscale;
 							-webkit-font-smoothing: antialiased;
-							font-family: FontAwesome;
+							font-family: Font Awesome\ 5 Free;
 							font-style: normal;
-							font-weight: normal;
+							font-weight: 900;
 							text-transform: none !important;
 						}
 
@@ -2862,6 +2864,11 @@
 		.share-btn.pinterest:hover   { background: #AD0000; }
 	  .share-btn.reddit:hover      { background: #e54e00; }
 	  .share-btn.email:hover       { background: #363636; }
+	  
+	  /* Font family for Font Awesame Brand Icons. */
+	  .fab:before {
+      	font-family: 'Font Awesome 5 Brands'!important;
+      }
 
 /* Share Menu */
 
@@ -2966,3 +2973,4 @@
 				}
 
 			}
+			
