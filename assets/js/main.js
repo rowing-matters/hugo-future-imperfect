@@ -13,8 +13,26 @@
 		small:	'(max-width: 736px)',
 		xsmall:	'(max-width: 480px)'
 	});
+	
+
 
 	$(function() {
+		
+		
+		function adjustShariffOrientation(isHorizontal) {
+			var $shariff = $("div[class=shariff]")
+			if (isHorizontal) {
+				$shariff.attr('data-oriention', 'horizontal');
+				$shariff.find('ul').removeClass("orientation-vertical");
+				$shariff.find('ul').addClass("orientation-horizontal");
+			} else {
+				$shariff.attr('data-oriention', 'vertical');
+				$shariff.find('ul').removeClass("orientation-horizontal");
+				$shariff.find('ul').addClass("orientation-vertical");
+			}
+		}
+		
+
 
 		var	$window = $(window),
 			$body = $('body'),
@@ -62,6 +80,7 @@
 			target: $body,
 			visibleClass: 'is-menu-visible'
 		});
+
 
 		$shareMenu.panel({
 			delay: 500,
@@ -134,11 +153,13 @@
 				skel
 					.on('+medium', function() {
 						$intro.prependTo($main);
+						adjustShariffOrientation(false);
 					})
 					.on('-medium', function() {
 						$intro.prependTo($sidebar);
+						adjustShariffOrientation(true);
 					});
-
+					
 	});
 
 })(jQuery);
