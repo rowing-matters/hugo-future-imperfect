@@ -6,7 +6,7 @@
 -->
 <html>
     <head>
-        {{ partial "seo_schema" . }}
+         {{ if ( .Site.Params.enableStructuredData ) }}{{ partial "seo_schema" . }}{{ end }}
         {{ with $.Scratch.Get "generalTitle" }}
             <title>{{ . }}</title>
         {{ else }}
@@ -108,8 +108,6 @@
       </script>
       {{- end -}}
       {{- end -}}
-      
-</script>
     
 
     </head>
