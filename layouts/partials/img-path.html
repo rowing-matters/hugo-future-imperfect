@@ -11,7 +11,7 @@
 -->
 
 {{ $src := $.Scratch.Get "path" }}
-{{ $alt := $.Scratch.Get "featuredalt" }}
+{{ $.Scratch.Set "alt" $.Params.featuredalt }}
 {{ $img := $.Scratch.Get "featured" }}
 {{ $structType := $.Scratch.Get "structType" }}
 
