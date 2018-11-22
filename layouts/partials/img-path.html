@@ -11,7 +11,6 @@
 -->
 
 {{ $src := $.Scratch.Get "path" }}
-{{ $.Scratch.Set "alt" $.Params.featuredalt }}
 {{ $img := $.Scratch.Get "featured" }}
 {{ $structType := $.Scratch.Get "structType" }}
 
@@ -19,8 +18,10 @@
   {{ $.Scratch.Set "path" "/img/" }}
   {{ if eq $structType "shortcode" }}
     {{ $.Scratch.Add "path" (.Page.Date.Format "2006/01") }}
+    {{ $.Scratch.Set "alt" .Page.Params.featuredalt }}
   {{ else }}
     {{ $.Scratch.Add "path" (.Date.Format "2006/01") }}
+    {{ $.Scratch.Set "alt" $.Params.featuredalt }}
   {{ end }}
 {{ else }}
   {{ $.Scratch.Set "path" $src }}
