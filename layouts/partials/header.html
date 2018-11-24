@@ -5,7 +5,7 @@
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-    <head>
+    <head lang="{{ .Site.LanguageCode }}">
          {{ if ( .Site.Params.enableStructuredData ) }}{{ partial "seo_schema" . }}{{ end }}
         {{ with $.Scratch.Get "generalTitle" }}
             <title>{{ . }}</title>
