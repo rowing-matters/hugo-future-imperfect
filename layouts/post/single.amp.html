@@ -52,6 +52,48 @@
       .wrapper {
         margin-top: 2em;
       }
+      
+      .postheader {
+        display: flex;
+        border-bottom: solid 1px #a0a0a04d;
+      }
+      
+      .title {
+        -moz-flex-grow: 1;
+        -webkit-flex-grow: 1;
+        -ms-flex-grow: 1;
+        flex-grow: 1;
+        -ms-flex: 1;
+        padding: 3.75em 3em 3.3em;
+        text-transform: uppercase;
+        order: 1;
+        flex-grow: 1;
+      }
+      
+      .meta {
+        padding: 3.75em 3em 1.75em;
+        order: 1;
+        border-left: solid 1px #a0a0a04d;
+        min-width: 17em;
+        text-align: right;
+        width: 17em;
+      }
+      
+      header p {
+        font-size: .7em;
+        font-weight: 400;
+        letter-spacing: .25em;
+        line-height: 2.5;
+        margin: -1em 1em 0;
+
+    margin-top: -1em;
+    margin-right: 1em;
+    margin-bottom: 0px;
+    margin-left: 1em;
+
+    text-transform: uppercase;
+      }
+      
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script type="application/ld+json">
@@ -95,9 +137,7 @@
     </header>
     <div class="wrapper">
       <article>
-        <div class="title">
-        <h2>{{ .Title }}</h2>
-        </div>
+         {{ .Render "header" }}
         {{ .Content }}
       </article>
     </div>
