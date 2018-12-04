@@ -1,0 +1,19 @@
+{{ if and (isset .Params "featuredpath") (ne .Params.featuredpath "") }}
+    {{ $.Scratch.Set "path" .Params.featuredpath }}
+    
+    {{ if and (isset .Params "featured") (ne .Params.featuredpath "") }}
+        {{ $.Scratch.Set "structType" "page" }}
+        {{ partial "img-path" . }}
+        {{ $path := $.Scratch.Get "path" }}
+        {{ $alt := $.Scratch.Get "alt" }}
+        {{ $img := $.Scratch.Get "img" }}
+    <!-- Folder static is for the time being harc coded -->
+    {{ $imgProjectPath := print "static/" $path "/" .Params.featured}}
+    {{ $imgData := imageConfig $imgProjectPath }}
+        <a href="{{ .RelPermalink }}" class="image featured">
+            <amp-img alt="{{ $alt }}" src="{{ $path | relURL }}/{{ .Params.featured }}"
+                width="{{ $imgData.Width }}" height="{{ $imgData.Height  }}" layout="responsive">
+            </amp-img>
+        </a>
+    {{ end }}
+{{ end }}
