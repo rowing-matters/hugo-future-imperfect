@@ -10,10 +10,10 @@
     <!-- Folder static is for the time being harc coded -->
     {{ $imgProjectPath := print "static/" $path "/" .Params.featured}}
     {{ $imgData := imageConfig $imgProjectPath }}
-        <a href="{{ .RelPermalink }}" class="image featured">
+        <div class="image featured">
             <amp-img alt="{{ $alt }}" src="{{ $path | relURL }}/{{ .Params.featured }}"
                 width="{{ $imgData.Width }}" height="{{ $imgData.Height  }}" layout="responsive">
             </amp-img>
-        </a>
+        </div>
     {{ end }}
 {{ end }}
