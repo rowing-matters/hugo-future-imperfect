@@ -1,0 +1,54 @@
+<!--
+    params 2-4
+    Can be positional or named
+
+    position 0, name: path
+        Can pass in the following values:
+            title: will use /img/LinkTitle as the path
+            date: will use /img/Year/Month as the path
+            /path/to/img: can pass in explicit path to the image
+
+    position 1, name: file
+        Name of the file including the file extension
+
+    position 2, name: alt
+        Name of the alternate text for the image
+-->
+{{ $numOfParams := len .Params }}
+{{ if and (ge $numOfParams 2) (le $numOfParams 4) }}
+    <!-- Check if the Parameter is positional or named
+         which can handle both. -->
+    {{ if .IsNamedParams }}
+        {{ $.Scratch.Set "path" (.Get "path") }}
+        {{ $.Scratch.Set "file" (.Get "file") }}
+        {{ $.Scratch.Set "alt"  (.Get "alt") }}
+    {{ else }}
+        {{ $.Scratch.Set "path" (.Get 0) }}
+        {{ $.Scratch.Set "file" (.Get 1) }}
+        {{ if ge $numOfParams 3 }}
+            {{ $.Scratch.Set "alt" (.Get 2) }}
+        {{ else }}
+            {{ $.Scratch.Set "alt" "" }}
+        {{ end }}
+    {{ end }}
+
+    {{ $file := $.Scratch.Get "file" }}
+    {{ $type := $.Scratch.Get "type" }}
+    {{ $alt  := $.Scratch.Get "alt" }}
+
+    {{ $.Scratch.Set "structType" "shortcode" }}
+    {{ partial "img-path" . }}
+    {{ $path := $.Scratch.Get "path" }}
+    
+     <!-- Folder static is for the time being harc coded -->
+    {{ $imgProjectPath := print "static/" $path "/" $file}}
+    {{ $imgData := imageConfig $imgProjectPath }}
+    
+     <figure class="center">
+        <amp-img src="{{ $path }}/{{ $file }}" alt="{{ $alt }}" layout="intrinsic"
+            height="{{ $imgData.Height  }}" width="{{ $imgData.Width }}"/>
+        <figcaption>
+            <h4>{{ $alt }}</h4>
+        </figcaption>
+    </figure>
+{{ end }}
