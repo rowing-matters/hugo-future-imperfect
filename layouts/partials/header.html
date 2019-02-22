@@ -82,6 +82,7 @@
         {{ end }}
         <!-- RSS-Link -->
         <link rel="alternate" type="application/atom+xml" title="{{ .Site.Title }}" href="{{ .Site.RSSLink }}">
+        {{ range .AlternativeOutputFormats -}}<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">{{ end -}}
 
 {{ if (not .Site.Params.disable_highlight) }}
   {{ $highTheme := .Site.Params.highlightjsTheme }}
@@ -109,7 +110,6 @@
       {{- end -}}
       {{- end -}}
     
-
     </head>
     <body>
 
