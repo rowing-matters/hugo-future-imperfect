@@ -1,0 +1,7 @@
+{{ $style := .Get 0 }}
+{{ .Scratch.Set "marker" "$" }}
+{{ $numOfParams := len .Params}}
+{{ if and (eq $numOfParams 1) (eq "inline" $style) }}
+{{ .Scratch.Set "marker" "" }}
+{{end}}
+<code>{{ .Scratch.Get "marker" }}${{ .Inner  }}${{ .Scratch.Get "marker" }}</code>
